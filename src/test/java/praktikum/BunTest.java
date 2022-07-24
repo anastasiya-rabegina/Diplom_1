@@ -1,23 +1,28 @@
 package praktikum;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class BunTest {
 
+    Bun bun;
+
+    private final String testName = "red bun";
+    private final float price = 300F;
+
+    @Before
+    public void init() {
+        bun = new Bun(testName, price);
+    }
+
     @Test
     public void getNameReturnsName() {
-        //change to random name later
-        String testName = "Флюоресцентная булка R2-D3";
-
-        Bun bun = new Bun(testName, 988);
         Assert.assertEquals(testName, bun.getName());
     }
 
     @Test
     public void getPriceReturnsPrice() {
-        float price = 1;
-        Bun bun = new Bun("Test", price);
         Assert.assertEquals(price, bun.getPrice(), 0);
     }
 }
